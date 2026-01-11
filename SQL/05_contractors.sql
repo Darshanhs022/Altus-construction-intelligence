@@ -3,4 +3,3 @@ CREATE TABLE contractors (
     contractor_name TEXT UNIQUE NOT NULL,
     active_flag BOOLEAN NOT NULL DEFAULT TRUE
 );
-
