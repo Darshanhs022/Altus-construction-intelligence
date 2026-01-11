@@ -302,3 +302,47 @@ These rules ensure that:
 - Insights remain reliable and interpretable
 - Dashboards do not misrepresent incomplete data
 - Advanced analytics can be layered safely in future phases
+
+## 10. Monthly Planned Targets
+
+Purpose:
+Defines how monthly planned scope is captured to enable plan vs actual analysis without affecting daily execution logic.
+
+Required Fields:
+- Project Identifier
+- Tower Identifier
+- Activity Name
+- Plan Month (DATE, first day of month)
+- Planned Units
+
+Rules:
+- One record per project–tower–activity–month
+- Plan Month must be stored as the first calendar day of the month
+- Example: 2026-02-01 represents February 2026
+- Planned units represent expected execution for that month, not cumulative totals
+- Monthly plans can be uploaded:
+  - before the month starts
+  - or mid-month (updates allowed)
+Re-uploads for the same month overwrite the plan, not append
+
+Technical Handling:
+- Monthly plans are stored in a dedicated table
+- Inserts use upsert logic (idempotent by month)
+- Historical months are never deleted automatically
+- Plans do not affect:
+  - baseline logic
+  - cumulative completion
+  - daily progress calculations
+
+Assumptions:
+- Planning data may change during the month
+- Monthly planning maturity improves over time
+- Absence of a monthly plan means:
+  - plan vs actual analysis is unavailable
+  - progress tracking remains valid
+
+Outcome:
+- Monthly planned targets enable:
+  - Plan vs actual reporting
+  - Variance and forecast analysis
+  - Schedule discipline without corrupting execution data
