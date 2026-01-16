@@ -243,38 +243,7 @@ Daily progress input enables:
 - Real-time visibility of execution status
 - Automated identification of delays and bottlenecks
 
-## 8. Daily Labour Input
-
-Purpose:
-This section defines how daily labour deployment is captured to enable productivity, utilisation, and risk analysis.
-
-Required Fields:
-- Project Identifier
-- Entry Date
-- Tower Identifier
-- Activity Name
-- Labour Count
-- Optional Contractor Name
-
-Rules:
-- Labour data is captured once per day per tower–activity combination.
-- If multiple entries are submitted on the same day, the latest valid entry is retained.
-- Labour count must be a non-negative integer.
-- Activity names must align with the Activities Master.
-- Contractor attribution is resolved using contractor–activity–tower mapping when not explicitly provided.
-
-Assumptions:
-- Labour input represents manpower deployed, not productivity achieved.
-- Labour data may be unavailable on some days; missing entries are treated as zero deployment.
-- Labour data is independent of progress data and is not mandatory for progress capture.
-
-Outcome:
-Daily labour input enables:
-- Productivity analysis
-- Identification of under- or over-utilisation
-- Contractor performance
-
-## 9. Analytics Validity Rules
+## 8. Analytics Validity Rules
 
 Purpose:
 This section defines which analyses are valid based on data availability and project lifecycle stage.
@@ -303,7 +272,7 @@ These rules ensure that:
 - Dashboards do not misrepresent incomplete data
 - Advanced analytics can be layered safely in future phases
 
-## 10. Monthly Planned Targets
+## 9. Monthly Planned Targets
 
 Purpose:
 Defines how monthly planned scope is captured to enable plan vs actual analysis without affecting daily execution logic.
