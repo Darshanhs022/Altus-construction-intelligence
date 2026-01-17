@@ -315,3 +315,15 @@ Outcome:
   - Plan vs actual reporting
   - Variance and forecast analysis
   - Schedule discipline without corrupting execution data
+
+
+## Architecture Overview
+
+The diagram below shows the high-level data flow in ALTUS 2.0,
+from data ingestion to analytical outputs.
+
+![ALTUS 2.0 Architecture](Docs/altus_2.0_architecture.png)
+
+
+
+
