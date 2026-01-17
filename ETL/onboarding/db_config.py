@@ -1,7 +1,7 @@
 DB_config={
     'host': 'localhost',
     'port': 5432,
-    'database': 'ALTUS_2.0',
+    'database': 'database',
     'user': 'postgres',
-    'password': '8050010867'
+    'password': 'password'
 }
